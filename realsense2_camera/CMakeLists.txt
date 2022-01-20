@@ -152,6 +152,8 @@ add_library(${PROJECT_NAME} SHARED
     include/ros_param_backend.h
     ${SOURCES}
 )
+set_target_properties(${PROJECT_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
+target_compile_definitions(${PROJECT_NAME} PRIVATE _USE_MATH_DEFINES)
 
 target_link_libraries(${PROJECT_NAME}
     ${realsense2_LIBRARY}
